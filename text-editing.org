@@ -112,7 +112,7 @@ uses of Visual Mode.
 #+CAPTION: General overview of Vim Modes. Will be covered in depth later.
 #+NAME:   fig:2
 [[./modes.jpg]]
-* Basic Vim editing commands
+* Vim editing commands
 NOTE: The 'Beginner' subheading will let you know which parts to focus on as a
 beginner. Only learn the Beginner commands that you want. Then when you get
 annoyed by inefficiency you can come back to learn more.
@@ -274,7 +274,7 @@ Visually select text then enter Command Mode using ~:~. NOTE: you will see
 selection.[fn:7]
 **** Intermediate
 - ~:'<,'>! wc -l~: Run bash command on visually selected text
-* Composability and Repeatability
+* Composability and repeatability
 ** Text Objects
 NOTE: All text objects can be used with delete, yank, copy, etc. "In" deletes
 the text inside, while "All" deletes a space, quotes, and braces as well.
