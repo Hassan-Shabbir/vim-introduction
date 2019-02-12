@@ -4,12 +4,12 @@
 * The main text editors
 NOTE: All footnotes are clickable.
 
-There are two main (extensible) text editors for Unix and Gnu/Linux[fn:11]
+There are two main (extensible) text editors for Unix and GNU/Linux[fn:11]
 operating systems. These are the VI and Emacs lines of text editors.
 
 Both of these text editors are highly configurable and therefore are highly
 recommended by many programmers, so much so that since their inception many
-programmers have been arguing over which text editor is better[fn:12]
+programmers have been arguing over which text editor is better.[fn:12]
 ** VI
 VI (pronounced "ve-eye"), and other text editors based off of it are great at
 creating and editing text. It is (usually) a basic text editor, however newer
@@ -35,12 +35,12 @@ refer to it as Vim, since I am lazy.
 
 There are three different VI versions you should be familiar with.
 ** VI
-VI[fn:3] is the oldest text editor we will be looking at, which was created
-in 1976. VI is short for Visual, differentiating it from line editors.[fn:1] If
-you plan to work with many servers, you should expect literally expect every
-server to have it. It is very minimalistic so it won't tell you when you are in
-insert mode in any way (see below), for example. This makes it harder to
-understand for beginners, and doesn't have all the features of Vim.
+VI[fn:3] is the oldest text editor of the three, which was created in 1976. VI
+is short for Visual, differentiating it from line editors.[fn:1] If you plan to
+work with many servers, you should expect literally expect every server to have
+it. It is very minimalistic so it won't tell you when you are in insert mode in
+any way (see below), for example. This makes it harder to understand for
+beginners, and doesn't have all the features of Vim.
 ** Vim
 Vim[fn:4] is the newer version of VI, first released in 1991. Due to it being
 very popular for a long time, and still is (last stable release: 17 May 2018),
@@ -53,8 +53,15 @@ This has the most interactive features and therefore is the one that I would
 recommend to new users. For example, when you switch between different modes,
 the cursor changes, helping you to remember which mode you are in.
 
+--------------------------------------------------------------------------------
+
 \newpage
 
+* Installing Vim/NeoVim
+Packages (programs) can easily be installed in any Linux distrobution using the command line.
+For example, to manage packages on Ubuntu Linux, use the package manager ~apt~. The full
+command to install Vim would then be ~sudo apt install vim~, and the command to install
+NeoVim would be ~sudo apt install nvim~.[fn:13] 
 * Modal editing with Vim
 The first thing you need to know about Vim is that there are four main modes in
 which you operate. Each of these modes change what the keys on your keyboard
@@ -108,7 +115,7 @@ uses of Visual Mode.
 * Basic Vim editing commands
 NOTE: The 'Beginner' subheading will let you know which parts to focus on as a
 beginner. Only learn the Beginner commands that you want. Then when you get
-annoyed by inefficiency come back to learn more.
+annoyed by inefficiency you can come back to learn more.
 
 NOTE: Pressing the Escape key will return you back to Normal Mode from any mode.
 
@@ -122,10 +129,12 @@ Sections will be in the form: CommandName (from StartingMode)
 
 Commands will be in the form:
 - ~COMMAND~: (mnemonic device) Description of command
-** Entering Vim (from bash prompt)
-You can enter Vim from the commandline (not to be confused with Vim's Command
-Mode) by typing ~vim file.txt~, replacing ~file.txt~ for the file you want to
-edit. If the file doesn't exist, it will be created. You will now be in Vim.
+** Entering NeoVim (from bash prompt)
+You can enter NeoVim from the commandline (not to be confused with Vim's Command
+Mode) by typing ~nvim file.txt~, replacing ~file.txt~ for the file you want to
+edit. If the file doesn't exist, it will be created. You will now be in NeoVim.
+
+If you wish to use Vim, replace ~nvim~ in the command above with ~vim~.
 ** Movement Commands (from Normal Mode)
 *** Character Movement
 **** Beginner
@@ -355,6 +364,8 @@ proficient with Vim, you should use it repeatedly, until the Beginner commands
 come to you without much thought.
 * Footnotes
 
+[fn:13] The command to both run and install it is ~nvim~ NOT ~neovim~.
+
 [fn:12] See [[https://en.wikipedia.org/wiki/Editor_war][The Editor Wars (clickable)]].
 
 [fn:11] I'd just like to interject for a moment. What you usually refer to as Linux, is
@@ -382,10 +393,9 @@ the beginning of the selection, to the end of the selection."
 
 [fn:6] In VI you will neither see the cursor change nor the ~--INSERT--~ at the bottom
 
-[fn:5] NeoVim pronounced "neo-vim". The command to run it is ~nvim~ NOT ~neovim~, and
-it can be installed using ~sudo apt install nvim~.
+[fn:5] NeoVim pronounced "neo-vim". 
 
-[fn:4] VIM pronounced "vim"
+[fn:4] Vim pronounced "vim"
 
 [fn:3] VI pronounced "ve-eye", also pronounced "vy" but that is an unofficial pronounciation
 
