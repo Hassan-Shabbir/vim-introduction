@@ -5,8 +5,6 @@
 
 \newpage
 
-# TODO: change bullets to be short
-
 * The main text editors
 There are two main (extensible) text editors for Unix and GNU/Linux[fn:11]
 operating systems. These are the VI and Emacs lines of text editors.
@@ -333,7 +331,7 @@ macro, run the macro previously defined on the text you want. The steps are:
 Fun fact: you can also define recursive[fn:16] macros, (works in NeoVim). This
 allows you to create a single macro that runs forever (of course, Vim will stop
 the macro at the end of the document, for example). An example of this is the
-following key sequences: ~qaV~j@aq@a~, which switches the case of every
+following key sequences: ~qaV~j@aq@a~[fn:25], which switches the case of every
 character until the end of the document.
 ** Registers
 *** Intermediate
@@ -475,6 +473,9 @@ be able to use vim, and look up whatever you need on the internet. To become
 proficient with Vim, you should use it repeatedly, until the Beginner commands
 come to you without much thought.
 * Footnotes
+
+[fn:25] Usually the ~q~ register is used for macros, but this can get
+confusing when first starting out. The command would then be ~qqV~j@qq@q~.
 
 [fn:24] The text ~foo~ can be either a literal string or a regex, 
 such as ~^foo~.
