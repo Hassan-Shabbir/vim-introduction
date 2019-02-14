@@ -1,4 +1,4 @@
-% Created 2019-02-12 Tue 13:15
+% Created 2019-02-13 Wed 21:15
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -14,6 +14,8 @@
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, allcolors=blue}
 \author{Hassan Shabbir}
 \date{\today}
 \title{Editing Text With Vim}
@@ -30,10 +32,9 @@
 \tableofcontents
 
 \newpage
-\section{The main text editors}
-\label{sec:orgc1559db}
-NOTE: All footnotes are clickable.
 
+\section{The main text editors}
+\label{sec:org1183b8f}
 There are two main (extensible) text editors for Unix and GNU/Linux\footnote{I'd just like to interject for a moment. What you usually refer to as Linux, is
 in fact, GNU/Linux, or as I've recently taken to calling it, GNU plus Linux.
 Linux is not an operating system unto itself, but rather another free component
@@ -44,9 +45,10 @@ operating systems. These are the VI and Emacs lines of text editors.
 
 Both of these text editors are highly configurable and therefore are highly
 recommended by many programmers, so much so that since their inception many
-programmers have been arguing over which text editor is better.\footnote{See \href{https://en.wikipedia.org/wiki/Editor\_war}{The Editor Wars (clickable)}.}
+programmers have been in a "war", arguing over which text editor is
+better.\footnote{See \href{https://en.wikipedia.org/wiki/Editor\_war}{The Editor Wars.}}
 \subsection{VI}
-\label{sec:org4287a1b}
+\label{sec:orgbc91eb5}
 VI (pronounced "ve-eye"), and other text editors based off of it are great at
 creating and editing text. It is (usually) a basic text editor, however newer
 versions of it allow a user to customize it and get IDE-like features within
@@ -54,46 +56,48 @@ it.\footnote{This is usually not encouraged, expecially at the beginning, since
 having plugins hinder your ability to understand Vim, and are nice to have
 and not necessarily mandatory for the functioning of Vim.} The main feature of VI is the way in which it allows a user to edit
 text.
-\subsection{Emacs}
-\label{sec:orgc24404a}
-Emacs (pronounced "ee-maks") is a text editor that is extremly configurable, and
-allows for a lot more IDE-like features. This is due to the fact that Emacs is a
-text editor based upon the functional programming language Lisp. This means that
-you are able to use a general purpose programming language to modify the text
-editor. Emacs can also emulate VI keybindings using EVIL mode (EVIL stands for
-Extensible VI Layer).
+\subsection{GNU Emacs}
+\label{sec:orgcb42bc6}
+GNU\footnote{GNU stands for "GNU's Not Unix", a recursive acronym.} Emacs (pronounced "g'noo ee-maks") is a text editor that is extremly
+configurable, and allows for a lot more IDE-like features. This is due to the
+fact that Emacs is a text editor written and extensible in the general purpose
+functional programming language Lisp. Emacs can also emulate VI keybindings
+using EVIL mode (EVIL stands for Extensible VI Layer). It is also interesting to
+note that Richard Stallman, the creator of GNU Emacs, also created the first
+alternative to Unix, which was GNU, the Free Software Foundation, as well as the
+GNU General Public Licence.\footnote{\href{https://en.wikipedia.org/wiki/Richard\_Stallman}{Richard Stallman.}}
 
 From here on out we will be talking about the VI line of editors. The curious
 reader is encouraged to read more about Emacs, if interested.
 \section{Which Vim version should I use?}
-\label{sec:org6f7e6a4}
-NOTE: There is almost no difference between these different text editors except
-for the information written below.
+\label{sec:org3657a21}
+NOTE: There is almost no difference between these different text editors (for
+our purposes) except for the information written below.
 
 NOTE: I will assume that Vim/NeoVim is used for the rest of this file, but will
 refer to it as Vim, since I am lazy.
 
 There are three different VI versions you should be familiar with.
 \subsection{VI}
-\label{sec:orgc77e462}
+\label{sec:org14758f2}
 VI\footnote{VI pronounced "ve-eye", also pronounced "vy" but that is an unofficial pronounciation} is the oldest text editor of the three, which was created in 1976. VI
 is short for Visual, differentiating it from line editors.\footnote{Technically, the "ed" and "ex" editors are even older, but they literally
 show you nothing (you have to manually print lines), so it is like editing text
 in the dark. This is where the command mode in VI comes from, see below. Also see
-\href{https://sanctum.geek.nz/arabesque/actually-using-ed/}{Actually Using Ed (clickable)} for some extreme masochism.} If you plan to
+\href{https://sanctum.geek.nz/arabesque/actually-using-ed/}{Actually Using Ed} for some extreme masochism.} If you plan to
 work with many servers, you should expect literally expect every server to have
 it. It is very minimalistic so it won't tell you when you are in insert mode in
 any way (see below), for example. This makes it harder to understand for
 beginners, and doesn't have all the features of Vim.
 \subsection{Vim}
-\label{sec:org0080a3f}
+\label{sec:org55e0d6e}
 Vim\footnote{Vim pronounced "vim"} is the newer version of VI, first released in 1991. Due to it being
 very popular for a long time, and still is (last stable release: 17 May 2018),
 it has many resources available on the internet for it. It is also recently
 modern, so it shouldn't be too difficult to use. Therefore, whenever searching
 for general vim resources use vim in the search terms.
 \subsection{NeoVim}
-\label{sec:orgdff50bc}
+\label{sec:org1334eb1}
 NeoVim\footnote{NeoVim pronounced "neo-vim".} is the newest version of vim, first released in November 1, 2015.
 This has the most interactive features and therefore is the one that I would
 recommend to new users. For example, when you switch between different modes,
@@ -104,13 +108,13 @@ the cursor changes, helping you to remember which mode you are in.
 \newpage
 
 \section{Installing Vim/NeoVim}
-\label{sec:org52a5025}
+\label{sec:org6a06348}
 Packages (programs) can easily be installed in any Linux distrobution using the command line.
 For example, to manage packages on Ubuntu Linux, use the package manager \texttt{apt}. The full
 command to install Vim would then be \texttt{sudo apt install vim}, and the command to install
 NeoVim would be \texttt{sudo apt install nvim}.\footnote{The command to both run and install it is \texttt{nvim} NOT \texttt{neovim}.} 
 \section{Modal editing with Vim}
-\label{sec:orgbe95364}
+\label{sec:orga5c2913}
 The first thing you need to know about Vim is that there are four main modes in
 which you operate. Each of these modes change what the keys on your keyboard
 will do.
@@ -120,9 +124,9 @@ rarely do you create whole documents without mistakes from start to finish (\tex
 > foo.txt} anyone?). For this reason, Vim is optimized for modifying text.
 Understanding modal editing (along with composability, repeatability, and text
 objects) is the key to understanding Vim\footnote{For more on how vim works see this awesome answer on Stackoverflow
-\href{https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim}{Your problem with Vim is that you don't grok vi (clickable).}}.
+\href{https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim}{Your problem with Vim is that you don't grok vi.}}.
 \subsection{Normal Mode (Movement; Modification)}
-\label{sec:orgcdc7693}
+\label{sec:orgcace4b0}
 Normal mode allows you to issue commands to Vim, which will then do something,
 other than putting the key that you pressed into the file. When you first open a
 file you will be in Normal Mode. Pressing keys such as \texttt{j} or \texttt{l} will move the
@@ -133,7 +137,7 @@ Normal mode. Thus this mode is called "normal" since it is the default mode when
 using Vim. To get back into Normal Mode either use the escape key, or the key 
 combination control and left-squrebracket keys.
 \subsection{Insert Mode (Add Text)}
-\label{sec:orgf564761}
+\label{sec:org075ae3e}
 When opening a document with Vim, you will be in Normal Mode. To get into Insert
 Mode, for example, you can press keys such as \texttt{i} or \texttt{a} and then you will be in
 Insert Mode. If you are using NeoVim, you will see the cursor become thin, and
@@ -145,17 +149,17 @@ should be done using Normal Mode, not the arrow keys, allowing your hand to stay
 on home row) You will notice that the cursor will become a block again in
 NeoVim.
 \subsection{Command Mode (System Commands; Ed commands)}
-\label{sec:org4e4c1f7}
+\label{sec:org3926c65}
 For now, the most important command mode you need to know will be the commands
 to exit Vim (which is accessible from Command Mode). This is such a problem for
-Vim beginners that \href{https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor}{this stackoverflow answer (clickable)} has 4,000 upvotes, and
+Vim beginners that \href{https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor}{this stackoverflow answer} has 4,000 upvotes, and
 over 1 Million views. The first step is to press \texttt{:} from Normal Mode. If you
 are not in Normal Mode, get to it using the escape key. You will now see a colon
 on the last line of the terminal. If you wish to save your changes type \texttt{wq},
 and then press enter. This command stands for write (save) the file then quit
 Vim. If you wish to throw away your changes type \texttt{q!} instead and then press enter.
 \subsection{Visual Mode (Select Text)}
-\label{sec:org31191c1}
+\label{sec:orgd47a530}
 Visual Mode is used for performing an operation over all of the characters in
 the text. This can be useful when you don't know how to run operations using
 text objects. Text objects allow you to refer to regions of text, such as "in
@@ -165,11 +169,11 @@ uses of Visual Mode.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{./modes.jpg}
-\caption{\label{fig:orga05731e}
+\caption{\label{fig:org62ee4f3}
 General overview of Vim Modes. Will be covered in depth later.}
 \end{figure}
 \section{Vim editing commands}
-\label{sec:org8fd7cdc}
+\label{sec:org404bcb9}
 NOTE: The 'Beginner' subheading will let you know which parts to focus on as a
 beginner. Only learn the Beginner commands that you want. Then when you get
 annoyed by inefficiency you can come back to learn more.
@@ -189,19 +193,19 @@ Commands will be in the form:
 \item \texttt{COMMAND}: (mnemonic device) Description of command
 \end{itemize}
 \subsection{Entering NeoVim (from bash prompt)}
-\label{sec:org8d7c63e}
+\label{sec:org010df6a}
 You can enter NeoVim from the commandline (not to be confused with Vim's Command
 Mode) by typing \texttt{nvim file.txt}, replacing \texttt{file.txt} for the file you want to
 edit. If the file doesn't exist, it will be created. You will now be in NeoVim.
 
 If you wish to use Vim, replace \texttt{nvim} in the command above with \texttt{vim}.
 \subsection{Movement Commands (from Normal Mode)}
-\label{sec:org713abb7}
+\label{sec:org717346b}
 \subsubsection{Character Movement}
-\label{sec:org0a7a012}
+\label{sec:org8c3ffc2}
 \begin{enumerate}
 \item Beginner
-\label{sec:orgc5bf939}
+\label{sec:org2488c36}
 \begin{itemize}
 \item \texttt{h}: Move cursor left
 \item \texttt{j}: Move cursor down
@@ -219,43 +223,43 @@ Character movement can also be prefixed with a number such as \texttt{5l}, to go
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{./hjkl.png}
-\caption{\label{fig:org943e4fc}
+\caption{\label{fig:org84eb0a9}
 A graphical depiction of h, j, k, l}
 \end{figure}
 \end{enumerate}
 \subsubsection{Line Movement}
-\label{sec:org477ed34}
+\label{sec:org9117f43}
 \begin{enumerate}
 \item Beginner
-\label{sec:org84e6cd2}
+\label{sec:org96b1df9}
 \begin{itemize}
 \item \texttt{\textasciicircum{}}: (This is from Regexes\footnote{Regexes, or regular expressions, are a way of doing things like parsing
-and substituting in a file. The regex '\(^{\text{hi}}\)' says match the line starting with
-'hi', and the regex '\^{}\$' says match the empty line (ie. the line that starts and
+and substituting in a file. The regex \texttt{\textasciicircum{}hi} says match the line starting with
+\texttt{hi}, and the regex \texttt{\textasciicircum{}\$} says match the empty line (ie. the line that starts and
 ends with nothing in between).}) Go to start of line
 \item \texttt{\$}: (This is from Regexes) Go to end of line
 \end{itemize}
 \end{enumerate}
 \subsubsection{File Movement}
-\label{sec:orga5717ae}
+\label{sec:orgb678820}
 \begin{enumerate}
 \item Beginner
-\label{sec:orga33d8eb}
+\label{sec:org5e2edde}
 \begin{itemize}
 \item \texttt{gg}: Go to start of file
 \item \texttt{G}: Go to end of file
 \end{itemize}
 \item Intermediate
-\label{sec:orgff8be23}
+\label{sec:org863f1dc}
 \begin{itemize}
 \item \texttt{50gg}: Go to line 50
 \end{itemize}
 \end{enumerate}
 \subsubsection{Word Movement}
-\label{sec:orge7d9231}
+\label{sec:org0ba2aed}
 \begin{enumerate}
 \item Intermediate
-\label{sec:org2b209fc}
+\label{sec:orgf255e5e}
 Frankly, I used to just spam \texttt{h} and \texttt{l} for quite a while, so these commands
 aren't strictly necessary.
 
@@ -266,16 +270,16 @@ aren't strictly necessary.
 \end{itemize}
 \end{enumerate}
 \subsubsection{Find Char Movement}
-\label{sec:orga83b58b}
+\label{sec:org3f377da}
 \begin{enumerate}
 \item Beginner
-\label{sec:org58a92b2}
+\label{sec:org75716e7}
 \begin{itemize}
 \item \texttt{fx}: (Find Char) Find character 'x' forwards
 \item \texttt{;}: Run \texttt{f} / \texttt{F} again
 \end{itemize}
 \item Intermediate
-\label{sec:org9e6efe8}
+\label{sec:orgfeb80bf}
 \begin{itemize}
 \item \texttt{Fx}: (Find Char) Find character 'x' backwards
 \item \texttt{,}: Run \texttt{f} / \texttt{F} again in opposite direction
@@ -284,27 +288,27 @@ aren't strictly necessary.
 \end{itemize}
 \end{enumerate}
 \subsubsection{Search Term Movement}
-\label{sec:org2ba8239}
+\label{sec:orgc01f5f4}
 \begin{enumerate}
 \item Beginner
-\label{sec:org66b92a9}
+\label{sec:orgb62a94a}
 \begin{itemize}
 \item \texttt{/}: Input search term, then press enter
 \item \texttt{n}: (Next) Go to next location matching search term
 \end{itemize}
 \item Intermediate
-\label{sec:orgbd93df4}
+\label{sec:org19eaa20}
 \begin{itemize}
 \item \texttt{N}: (Previous/Backwards Next) Go to previous location matching search term
 \end{itemize}
 \end{enumerate}
 \subsection{Insert Commands (from Normal Mode)}
-\label{sec:org642fd70}
+\label{sec:org4578dbc}
 These commands will change you automatically from Normal Mode
 to Insert Mode.
 \begin{enumerate}
 \item Beginner
-\label{sec:org737f364}
+\label{sec:orgf4532f0}
 \begin{itemize}
 \item \texttt{i}: (Insert) Enter Insert Mode before current character
 \item \texttt{I}: (Insert) Enter Insert Mode at the beginning of the line
@@ -312,18 +316,18 @@ to Insert Mode.
 \item \texttt{A}: (Append) Enter Insert Mode at the end of the line
 \end{itemize}
 \item Intermediate
-\label{sec:orga128984}
+\label{sec:org1b85eb5}
 \begin{itemize}
 \item \texttt{o}: (Open) Enter Insert Mode at the end of the line
 \item \texttt{O}: (Open) Enter Insert Mode at the end of the line
 \end{itemize}
 \end{enumerate}
 \subsection{Deletion Commands (from Normal Mode)}
-\label{sec:org54829d9}
+\label{sec:org4372fa9}
 NOTE: The composable nature of Vim should be apparent in this section.
 \begin{enumerate}
 \item Beginner
-\label{sec:org4a2560d}
+\label{sec:org6f4de6d}
 \begin{itemize}
 \item \texttt{x}: Delete character under cursor
 \item \texttt{dd}: (Delete, Default) Delete current line
@@ -333,29 +337,30 @@ NOTE: The composable nature of Vim should be apparent in this section.
 \item \texttt{diW}: (Delete In Word) Delete the whole space delimited word
 \end{itemize}
 \item Intermediate
-\label{sec:org979b149}
+\label{sec:org298cec1}
 I can't really be bothered to count how many words I want to delete.
+I prefer doing things like \texttt{dw..} instead, see below.
 \begin{itemize}
 \item \texttt{d3w}: (Delete Word) Delete 3 number of words, etc.
 \end{itemize}
 \end{enumerate}
 \subsection{Deletion Commands (from Visual Mode)}
-\label{sec:org10b5e0f}
+\label{sec:org8233b70}
 \begin{enumerate}
 \item Beginner
-\label{sec:org16962ac}
+\label{sec:org172b5e9}
 \begin{itemize}
 \item \texttt{d}: (Delete) Delete current visual selection
 \item \texttt{x}: (Delete) Delete current visual selection
 \end{itemize}
 \end{enumerate}
 \subsection{Change Commands (from Normal Mode)}
-\label{sec:orgc175874}
+\label{sec:org0999919}
 Change deletes something then puts you in Insert Mode
 to add text.
 \begin{enumerate}
 \item Beginner
-\label{sec:org522a975}
+\label{sec:orgadc3829}
 \begin{itemize}
 \item \texttt{cc}: (Change, Default) Delete line, then go into Insert Mode
 \item \texttt{cw}: (Change Word) Delete until the end of the word, then go into Insert Mode
@@ -363,19 +368,20 @@ to add text.
 \item \texttt{ciW}: (Change In Word) Delete the whole space delimited word, then go into Insert Mode
 \end{itemize}
 \item Intermediate
-\label{sec:org753c398}
+\label{sec:org1344c61}
 I can't really be bothered to count how many words I want to change.
+I prefer doing things like \texttt{cw..} instead, see below.
 \begin{itemize}
 \item \texttt{c3w}: (Change Word) Delete 3 number of words, etc., then go into Insert Mode
 \end{itemize}
 \end{enumerate}
 \subsection{Yank (Copy) Commands (from Normal Mode)}
-\label{sec:org7b04ba6}
+\label{sec:org9ae1422}
 NOTE: To copy text to use in other applications, use the \texttt{"+} prefix, which may
 not work in VI/Vim, also see registers below. 
 \begin{enumerate}
 \item Beginner
-\label{sec:org6cc6767}
+\label{sec:org7fb8d96}
 \begin{itemize}
 \item \texttt{yy}: (Yank, Default) Yank (copy) the current line, for Vim use only
 \item \texttt{yiw}: (Yank) Yank (copy) the current line, for Vim use only
@@ -384,68 +390,69 @@ not work in VI/Vim, also see registers below.
 \end{itemize}
 \end{enumerate}
 \subsection{Yank (Copy) Commands (from Visual Mode)}
-\label{sec:org668ff53}
+\label{sec:orga564125}
 \begin{enumerate}
 \item Beginner
-\label{sec:org8116123}
+\label{sec:orgbc5235c}
 \begin{itemize}
 \item \texttt{y}: (Yank) Yank (copy) current visual selection
 \end{itemize}
 \end{enumerate}
 \subsection{Paste Commands (from Normal Mode)}
-\label{sec:org690103a}
+\label{sec:org9f45b44}
 \begin{enumerate}
 \item Beginner
-\label{sec:orge13ef8a}
+\label{sec:org5f86a11}
 \begin{itemize}
 \item \texttt{p}: (Paste) Paste the last deletion/yank
 \end{itemize}
 \end{enumerate}
 \subsection{Paste Commands (from Visual Mode)}
-\label{sec:orgbe111e5}
+\label{sec:orgffb4d8c}
 \begin{enumerate}
 \item Beginner
-\label{sec:org046753a}
+\label{sec:orgf25f22d}
 \begin{itemize}
 \item \texttt{p}: (Paste) Paste, replacing current visual selection
 \end{itemize}
 \end{enumerate}
 \subsection{Undo Command (from Normal Mode)}
-\label{sec:orgdd2150d}
+\label{sec:org767a8ec}
 \begin{enumerate}
 \item Beginner
-\label{sec:org05e0e30}
+\label{sec:orgf542dee}
 \begin{itemize}
-\item \texttt{u}: (Undo) Undo last change
+\item \texttt{u}: (Undo) undo last change
 \end{itemize}
 \end{enumerate}
 \subsection{Visual Mode Commands (from Normal Mode)}
-\label{sec:orgf7ec7d6}
+\label{sec:orgca80dd2}
 First enter Visual Mode using any of the below, then make the selection using
 the movement commands as you would from Normal Mode. Then run the command on the
 selection, such as yank, delete, etc.
 \begin{enumerate}
 \item Beginner
-\label{sec:org2a30540}
+\label{sec:org714c274}
 \begin{itemize}
 \item \texttt{v}: (Visual) Enter character-wise Visual Mode
 \item \texttt{V}: (Visual) Enter line-wise Visual Mode
 \end{itemize}
 \item Intermediate
-\label{sec:org844fb99}
+\label{sec:org8068eed}
 \begin{itemize}
 \item \texttt{ctrl-v}: (Visual) Enter block-wise Visual Mode
 \end{itemize}
 
-NOTE: To comment out lines, use block-wise selection then press \texttt{I},
+NOTE: To comment out lines, use block-wise selection with \texttt{ctrl-v}, then press \texttt{I},
 and type the character comment (\texttt{//} for example), and hit escape. It can also
-be used as a poor man's version of a macro (see below).
+be used as a poor man's version of a macro (see below). Another way would be to
+use the Vim Commentary plugin (see below), with the command \texttt{gc}.
 \end{enumerate}
 \subsection{Command Mode (from Normal Mode)}
-\label{sec:org902e9e9}
+\label{sec:orgec0e2cb}
 \begin{enumerate}
 \item Beginner
-\label{sec:org030215b}
+\label{sec:orga88227b}
 \begin{itemize}
 \item \texttt{:w}: (Write) Write the file
 \item \texttt{:q}: (Quit) Quit Vim, without having modified the file
@@ -454,7 +461,7 @@ be used as a poor man's version of a macro (see below).
 \item \texttt{:x}: (Exit) Shorthand for \texttt{:wq}
 \end{itemize}
 \item Intermediate
-\label{sec:orgbe4bf3b}
+\label{sec:org2557687}
 \begin{itemize}
 \item \texttt{:! date}: (\texttt{!} is similar to \texttt{|}) Run bash command \texttt{date} and show the result without adding to file
 \item \texttt{:s/foo/bar/g}: (Substitute) Substitute 'foo' with 'bar', globally (ie. each occurrence)
@@ -462,7 +469,7 @@ be used as a poor man's version of a macro (see below).
 \end{itemize}
 \end{enumerate}
 \subsection{Command Mode (from Visual Mode)}
-\label{sec:org615707b}
+\label{sec:orgfeb479f}
 Visually select text then enter Command Mode using \texttt{:}. NOTE: you will see
 \texttt{:'<,'>} instead. This just tells Vim to run the command over the whole
 selection.\footnote{So the command will run in the range \texttt{x,y}, and 
@@ -471,20 +478,21 @@ referring to the last selection. So all together it says "run the command from
 the beginning of the selection, to the end of the selection."}
 \begin{enumerate}
 \item Intermediate
-\label{sec:orge0d6e9b}
+\label{sec:org675b8e3}
 \begin{itemize}
-\item \texttt{:'<,'>! wc -l}: Run bash command on visually selected text
+\item \texttt{:'<,'>! wc -l}: Run bash command \texttt{wc -l} on visually selected text
 \end{itemize}
 \end{enumerate}
 \section{Composability and repeatability}
-\label{sec:org6c126db}
+\label{sec:org28b96b8}
 \subsection{Text Objects}
-\label{sec:org9507d43}
+\label{sec:org6819610}
 NOTE: All text objects can be used with delete, yank, copy, etc. "In" deletes
-the text inside, while "All" deletes a space, quotes, and braces as well.
+the text inside, while "All" deletes quotes, braces, and a single space (so the
+spaces around it end up balanced).
 \begin{enumerate}
 \item Beginner
-\label{sec:org90afc2a}
+\label{sec:org69761a7}
 \begin{itemize}
 \item \texttt{iw}: (In Word)
 \item \texttt{aw}: (All Word)
@@ -501,63 +509,80 @@ the text inside, while "All" deletes a space, quotes, and braces as well.
 \end{itemize}
 \end{enumerate}
 \subsection{Dot (\texttt{.}) command}
-\label{sec:orgea4db2f}
+\label{sec:org6fc82ba}
 \begin{enumerate}
 \item Beginner
-\label{sec:orge682dd4}
+\label{sec:orgedde628}
 The dot command repeats the last complete command that you ran. For example if
 you changed a word to "Hi" using \texttt{ciwHi} and then escape, you can change another
 word to "Hi" using dot.
 
-This is one way of renaming variables.\footnote{The other way would be to run a search and replace, such as \texttt{:s/foo/bar/g}.} First search for a variable using \texttt{/},
+This is one way of renaming variables.\footnote{The other way would be to run a search and replace, such as \texttt{:s/foo/bar/g}, which
+would replace all occurences of \texttt{foo} with \texttt{bar}.} First search for a variable using \texttt{/},
 then using \texttt{ciw} change the variable to something else. Finally, repeat this
 change all throughout the document using \texttt{n} to go to the next instance, and \texttt{.}
-to run the change.
+to apply the change.
 \end{enumerate}
 \subsection{Number Prefixes}
-\label{sec:orge03da4c}
+\label{sec:orgc4218c0}
 \begin{enumerate}
 \item Intermediate
-\label{sec:org72e370b}
+\label{sec:orgf113830}
 Most commands can be prefixed, meaning you can run commands like \texttt{d5w} which
 will delete the next 5 words.
 \end{enumerate}
 \subsection{Macros}
-\label{sec:org98dd58a}
+\label{sec:org041cce1}
 \begin{enumerate}
 \item Intermediate
-\label{sec:org0a04ea3}
+\label{sec:orgbe8fcb3}
 Macros can be used for creating groups of repeatable commands. In other words,
 start macro, run general commands (ie. \texttt{w} rather than \texttt{llllllll}), stop macro,
-run the macro previously defined on all of the remaining text.
+run the macro previously defined on all of the remaining text. The steps are:
 
-\begin{itemize}
+\begin{enumerate}
 \item \texttt{qa}: Record Macro in register \texttt{a}, see below
 \item \texttt{q}: While recording, it will end the macro
 \item \texttt{@a}: Run Macro in register \texttt{a}
-\end{itemize}
+\end{enumerate}
+
+Fun fact: you can also define recursive macros, (works in NeoVim).\footnote{Here's a quick introduction to recursion. Recursion is defining something
+in terms of what you are defining. For example, a directory can contain multiple
+files and multiple directories. A math example would be an equation like \texttt{x =
+1 + x}, and replacing x on the right with \texttt{1 + x} giving us \texttt{x = 1 + 1 + x}, and
+continuing to infinity would give us \texttt{x = 1 + 1 + 1 + 1 + ...}. A similar
+expansion can be carried out on the acronym \texttt{GNU}, left as an exercise for the
+reader.} This
+allows you to create a single macro that runs forever (of course, Vim will stop
+the macro at the end of the document, for example). An example of this is the 
+following key sequences: \texttt{qaV\textasciitilde{}j@a}.
 \end{enumerate}
 \section{Registers}
-\label{sec:org21789b6}
+\label{sec:orgafc02a3}
 \begin{enumerate}
 \item Intermediate
-\label{sec:org509af84}
-The most important part about registers is that the \texttt{"+} register is used to
-store the global clipboard, which can be accessed by any program. Other actions,
-such as yanks and deletions can be prefixed with a register, for later retrieval.
+\label{sec:orge9b1fd4}
+The most important part about registers is that the \texttt{"+} prefix
+is used to store the global clipboard, which can be accessed by any
+program.\footnote{The \texttt{"} is used to retrieve registers, with \texttt{+} referring to the name
+of the register to be accessed.} Other actions, such as yanks and deletions can be prefixed with a
+register, for later retrieval.
+
+A useful combination is using registers for editing a macro you wrote.
+To continue from the macros section, you can write an incorrect macro, 
 
 Frankly, I don't use any register other than the global one.
 \end{enumerate}
 \section{Extending Vim for yourself}
-\label{sec:orgdb88261}
+\label{sec:org6f8e722}
 To change the default behaviour of Vim, you can modify a configuration file
 called \texttt{.vimrc} (in Gnu/Linux) or \texttt{\_vimrc} (in Windows, I think).
 
 This will allow you to use plugins, change colorshemes, map keys to commands,
 etc.
 \subsection{Plugins}
-\label{sec:org584adc8}
-These are a few plugins that I would consider quite useful. All links clickable.
+\label{sec:orgecbb07c}
+These are a few plugins that I would consider quite useful.
 
 \begin{itemize}
 \item \href{https://github.com/junegunn/vim-plug}{Vim Plug}: Vim plugin manager
@@ -582,14 +607,14 @@ This is useful for starting off in Vim. (Not needed for NeoVim.)
 
 More plugins for Vim can be found on \url{https://vimawesome.com}.
 \subsubsection{ColorSchemes}
-\label{sec:org9b0fc13}
+\label{sec:orgc325695}
 \begin{itemize}
 \item \href{https://www.github.com/liuchengxu/space-vim-dark}{Space Vim Dark}
 \item \href{https://github.com/altercation/solarized}{Solarized}
 \end{itemize}
 
 \subsubsection{Vim in other places}
-\label{sec:org4863968}
+\label{sec:org1b8e523}
 \begin{itemize}
 \item Bash/Zsh: Both Bash and Zsh have Vim modes that can be enabled
 \item \href{https://github.com/ardagnir/athame}{Athame}: Full Vim in the terminal, ie. when writing bash commands
@@ -599,7 +624,7 @@ More plugins for Vim can be found on \url{https://vimawesome.com}.
 There are also other applications that will use Vim-like keybindings by default,
 such as \texttt{man}.
 \section{Conclusion}
-\label{sec:org68c87ba}
+\label{sec:org6b3a8cf}
 Congratulations on finishing this whole document! You should now know enough to
 be able to use vim, and look up whatever you need on the internet. To become
 proficient with Vim, you should use it repeatedly, until the Beginner commands
