@@ -276,7 +276,7 @@ you if you try to quit with unsaved changes.
 *** Intermediate
 - ~:! date~: (~!~ is similar to ~|~) Run bash command ~date~ and show the result without adding to file
 - ~:r! date~: (Read) Run bash command ~date~ and read in the result into the file
-- ~:s/foo/bar/g~: (Substitute) Substitute 'foo' with 'bar', globally (ie. each occurrence)
+- ~:s/foo/bar/g~[fn:24]: (Substitute) Substitute 'foo' with 'bar', globally (ie. each occurrence)
 ** Command Mode (from Visual Mode)
 Visually select text then enter Command Mode using ~:~. NOTE: you will see
 ~:'<,'>~[fn:7] instead. This just tells Vim to run the command over the whole
@@ -309,8 +309,8 @@ you changed a word to "Hi" using ~ciwHi~ and then escape, you can change another
 word to "Hi" using dot.
 
 Expanding on the above, one way[fn:10] to quickly rename variables would be to
-first search for a variable using ~/~, then using ~ciw~ change the variable to
-something else. Finally, repeat this change all throughout the document using
+first search for a variable using ~/~, then using ~ciw~ to change the variable
+to something else. Finally, repeat this change all throughout the document using
 ~n~ to go to the next instance, and ~.~ to apply the change.
 ** Number Prefixes
 *** Intermediate
@@ -329,7 +329,7 @@ run the macro previously defined on all of the remaining text. The steps are:
 Fun fact: you can also define recursive macros, (works in NeoVim).[fn:16] This
 allows you to create a single macro that runs forever (of course, Vim will stop
 the macro at the end of the document, for example). An example of this is the
-following key sequences: ~qaV~j@aq~, which switches the case of every character
+following key sequences: ~qaV~j@aq@a~, which switches the case of every character
 until the end of the document.
 ** Registers
 *** Intermediate
@@ -356,8 +356,8 @@ the home directory in Windows).
 
 For example, typing ~:colorscheme elflord~[fn:22] from Normal Mode, will change
 the colorscheme to elflord for the current Vim session. Once you close Vim this
-setting will be gone. To save this setting, save a line in the configuration
-file as:
+setting will be gone. To save this setting, save the following lines in the
+configuration file as:
 
 #+BEGIN_SRC vim
 " Set colorscheme to elflord
@@ -473,6 +473,8 @@ proficient with Vim, you should use it repeatedly, until the Beginner commands
 come to you without much thought.
 * Footnotes
 
+[fn:24] The text ~foo~ can be either a literal string or a regex, such as ~^foo~.
+
 [fn:23] This is mostly taken from [[https://github.com/amix/vimrc][Amix's Vimrc.]]
 
 [fn:22] To find a colorscheme you like from the preinstalled colorschemes, go to [[https://stackoverflow.com/questions/7331940/how-to-get-the-list-of-all-installed-color-schemes-in-vim][List
@@ -489,7 +491,8 @@ one after another.
 [[https://sanctum.geek.nz/arabesque/actually-using-ed/][Actually Using Ed]] for some extreme masochism.
 
 [fn:17] The ~"~ is used to retrieve registers, with ~+~ referring to the name
-of the register to be accessed.
+of the register to be accessed, (in this case it is the special "global
+register").
 
 [fn:16] Here's a quick introduction to recursion. Recursion is defining something
 in terms of what you are defining. For example, a directory can contain multiple
