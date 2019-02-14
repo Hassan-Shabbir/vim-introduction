@@ -25,9 +25,9 @@ configurable, and allows for a lot more IDE-like features. This is due to the
 fact that Emacs is a text editor written and extensible in the general purpose
 functional programming language Lisp. Emacs can also emulate VI keybindings
 using EVIL mode (EVIL stands for Extensible VI Layer). It is also interesting to
-note that Richard Stallman, the creator of GNU Emacs, also created the first
-alternative to Unix, which was GNU, the Free Software Foundation, as well as the
-GNU General Public Licence.[fn:15]
+note that Richard Stallman,[fn:15] the creator of GNU Emacs, also created the
+first alternative to Unix, which was GNU, the Free Software Foundation, as well
+as the GNU General Public Licence.
 
 From here on out we will be talking about the VI line of editors. The curious
 reader is encouraged to read more about Emacs, if interested.
@@ -40,12 +40,12 @@ refer to it as Vim, since I am lazy.
 
 There are three different VI versions you should be familiar with.
 ** VI
-VI[fn:3] is the oldest text editor of the three, which was created in 1976. VI
-is short for Visual, differentiating it from line editors.[fn:1] If you plan to
-work with many servers, you should expect literally expect every server to have
-it. It is very minimalistic so it won't tell you when you are in insert mode in
-any way (see below), for example. This makes it harder to understand for
-beginners, and doesn't have all the features of Vim.
+VI[fn:3] is the oldest text editor of the three[fn:1], which was created in
+1976.[fn:18] VI is short for Visual, differentiating it from line editors. If
+you plan to work with many servers, you should expect literally expect every
+server to have it. It is very minimalistic so it won't tell you when you are in
+insert mode in any way (see below), for example. This makes it harder to
+understand for beginners, and doesn't have all the features of Vim.
 ** Vim
 Vim[fn:4] is the newer version of VI, first released in 1991. Due to it being
 very popular for a long time, and still is (last stable release: 17 May 2018),
@@ -63,10 +63,10 @@ the cursor changes, helping you to remember which mode you are in.
 \newpage
 
 * Installing Vim/NeoVim
-Packages (programs) can easily be installed in any Linux distrobution using the command line.
-For example, to manage packages on Ubuntu Linux, use the package manager ~apt~. The full
-command to install Vim would then be ~sudo apt install vim~, and the command to install
-NeoVim would be ~sudo apt install nvim~.[fn:13] 
+Packages (programs) can easily be installed in any Linux distrobution using the
+command line. For example, to manage packages on Ubuntu Linux, use the package
+manager ~apt~. The full command to install Vim would then be ~sudo apt install
+vim~, and the command to install NeoVim would be ~sudo apt install nvim~.[fn:13]
 * Modal editing with Vim
 The first thing you need to know about Vim is that there are four main modes in
 which you operate. Each of these modes change what the keys on your keyboard
@@ -76,7 +76,7 @@ In general, when editing text you will mostly be making small changes, and very
 rarely do you create whole documents without mistakes from start to finish (~cat
 > foo.txt~ anyone?). For this reason, Vim is optimized for modifying text.
 Understanding modal editing (along with composability, repeatability, and text
-objects) is the key to understanding Vim[fn:2].
+objects) is the key to understanding Vim.[fn:2]
 ** Normal Mode (Movement; Modification)
 Normal mode allows you to issue commands to Vim, which will then do something,
 other than putting the key that you pressed into the file. When you first open a
@@ -85,7 +85,7 @@ cursor rather than adding those letters to the file. You should almost always be
 in Normal Mode, since editing text requires the ability of moving around the
 document, and deleting, replacing, copying text, etc. which are all possible in
 Normal mode. Thus this mode is called "normal" since it is the default mode when
-using Vim. To get back into Normal Mode either use the escape key, or the key 
+using Vim. To get back into Normal Mode either use the escape key, or the key
 combination control and left-squrebracket keys.
 ** Insert Mode (Add Text)
 When opening a document with Vim, you will be in Normal Mode. To get into Insert
@@ -101,12 +101,12 @@ NeoVim.
 ** Command Mode (System Commands; Ed commands)
 For now, the most important command mode you need to know will be the commands
 to exit Vim (which is accessible from Command Mode). This is such a problem for
-Vim beginners that [[https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor][this stackoverflow answer]] has 4,000 upvotes, and
-over 1 Million views. The first step is to press ~:~ from Normal Mode. If you
-are not in Normal Mode, get to it using the escape key. You will now see a colon
-on the last line of the terminal. If you wish to save your changes type ~wq~,
-and then press enter. This command stands for write (save) the file then quit
-Vim. If you wish to throw away your changes type ~q!~ instead and then press enter.
+Vim beginners that [[https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor][this stackoverflow answer]] has 4,000 upvotes, and over 1
+Million views. First enter Normal mode by pressing the escape key, then press
+~:~. You will now see a colon on the last line of the terminal. If you wish to
+save your changes type ~wq~, and then press enter. This command stands for write
+(save) the file then quit Vim. If you wish to throw away your changes type ~q!~
+instead and then press enter.
 ** Visual Mode (Select Text)
 Visual Mode is used for performing an operation over all of the characters in
 the text. This can be useful when you don't know how to run operations using
@@ -115,7 +115,7 @@ braces", "in tag", "all paragraph", etc. Text objects will replace most simple
 uses of Visual Mode.
 
 #+CAPTION: General overview of Vim Modes. Will be covered in depth later.
-#+NAME:   fig:2
+#+NAME:   fig-2
 [[./modes.jpg]]
 * Vim editing commands
 NOTE: The 'Beginner' subheading will let you know which parts to focus on as a
@@ -128,7 +128,7 @@ NOTE: Vim uses mnemonic devices (ie. ~d~ stands for delete) to help you remember
 what command does what. Use this to remember what each command does. Also,
 commands that are related, but do something different are capitalized (~D~
 deletes to the end of the line), and the default action is defined by the
-repeated letter (such as ~dd~ for delete with default action, delete line).
+repeated letter (such as ~dd~[fn:19] for delete with default action, delete line).
 
 Sections will be in the form: CommandName (from StartingMode)
 
@@ -152,11 +152,11 @@ The way to remember this is that the ~h~ key is on the left of the four keys,
 ~l~ is on the right, ~j~ is written with the hook below the line, and ~k~ has
 the vertical line above the line.
 
-Character movement can also be prefixed with a number such as ~5l~, to go
-5 characters right.
+Character movement can also be prefixed with a number such as ~5l~, to go 5
+characters right.
 
 #+CAPTION: A graphical depiction of h, j, k, l
-#+NAME:   fig:1
+#+NAME:   fig-1
 [[./hjkl.png]]
 *** Line Movement
 **** Beginner
@@ -192,102 +192,104 @@ aren't strictly necessary.
 **** Intermediate
 - ~N~: (Previous/Backwards Next) Go to previous location matching search term
 ** Insert Commands (from Normal Mode)
-These commands will change you automatically from Normal Mode
-to Insert Mode.
-**** Beginner
+These commands will change you automatically from Normal Mode to Insert Mode.
+*** Beginner
 - ~i~: (Insert) Enter Insert Mode before current character
 - ~I~: (Insert) Enter Insert Mode at the beginning of the line
 - ~a~: (Append) Enter Insert Mode after current character
 - ~A~: (Append) Enter Insert Mode at the end of the line
-**** Intermediate
+*** Intermediate
 - ~o~: (Open) Enter Insert Mode at the end of the line
 - ~O~: (Open) Enter Insert Mode at the end of the line
 ** Deletion Commands (from Normal Mode)
 NOTE: The composable nature of Vim should be apparent in this section.
-**** Beginner
+*** Beginner
 - ~x~: Delete character under cursor
 - ~dd~: (Delete, Default) Delete current line
 - ~dw~: (Delete Word) Delete until the end of the word
 - ~dfc~: (Delete Find 'c') Delete including the first 'c' on the right of the cursor
 - ~diw~: (Delete In Word) Delete the whole word
 - ~diW~: (Delete In Word) Delete the whole space delimited word
-**** Intermediate
-I can't really be bothered to count how many words I want to delete.
-I prefer doing things like ~dw..~ instead, see below.
+*** Intermediate
+I can't really be bothered to count how many words I want to delete. I prefer
+doing things like ~dw..~ instead, see below.
 - ~d3w~: (Delete Word) Delete 3 number of words, etc.
 ** Deletion Commands (from Visual Mode)
-**** Beginner
+*** Beginner
 - ~d~: (Delete) Delete current visual selection
 - ~x~: (Delete) Delete current visual selection
 ** Change Commands (from Normal Mode)
-Change deletes something then puts you in Insert Mode
-to add text.
-**** Beginner
+Change deletes something then puts you in Insert Mode to add text.
+*** Beginner
 - ~cc~: (Change, Default) Delete line, then go into Insert Mode
 - ~cw~: (Change Word) Delete until the end of the word, then go into Insert Mode
 - ~ciw~: (Change In Word) Delete the whole word, then go into Insert Mode
 - ~ciW~: (Change In Word) Delete the whole space delimited word, then go into Insert Mode
-**** Intermediate
-I can't really be bothered to count how many words I want to change.
-I prefer doing things like ~cw..~ instead, see below.
+*** Intermediate
+I can't really be bothered to count how many words I want to change. I prefer
+doing things like ~cw..~ instead, see below.
 - ~c3w~: (Change Word) Delete 3 number of words, etc., then go into Insert Mode
 ** Yank (Copy) Commands (from Normal Mode)
 NOTE: To copy text to use in other applications, use the ~"+~ prefix, which may
-not work in VI/Vim, also see registers below. 
-**** Beginner
+not work in VI/Vim, also see registers below.
+*** Beginner
 - ~yy~: (Yank, Default) Yank (copy) the current line, for Vim use only
 - ~yiw~: (Yank) Yank (copy) the current line, for Vim use only
 - ~"+yy~: (Yank, Default) Yank (copy) the current line, for any application
 - ~"+yiw~: (Yank) Yank (copy) the current line, for any application
 ** Yank (Copy) Commands (from Visual Mode)
-**** Beginner
+*** Beginner
 - ~y~: (Yank) Yank (copy) current visual selection
 ** Paste Commands (from Normal Mode)
-**** Beginner
+*** Beginner
 - ~p~: (Paste) Paste the last deletion/yank
 ** Paste Commands (from Visual Mode)
-**** Beginner
+*** Beginner
 - ~p~: (Paste) Paste, replacing current visual selection
 ** Undo Command (from Normal Mode)
-**** Beginner
+*** Beginner
 - ~u~: (Undo) undo last change
 ** Visual Mode Commands (from Normal Mode)
 First enter Visual Mode using any of the below, then make the selection using
 the movement commands as you would from Normal Mode. Then run the command on the
 selection, such as yank, delete, etc.
-**** Beginner
+*** Beginner
 - ~v~: (Visual) Enter character-wise Visual Mode
 - ~V~: (Visual) Enter line-wise Visual Mode
-**** Intermediate
+*** Intermediate
 - ~ctrl-v~: (Visual) Enter block-wise Visual Mode
 
-NOTE: To comment out lines, use block-wise selection with ~ctrl-v~, then press ~I~,
-and type the character comment (~//~ for example), and hit escape. It can also
-be used as a poor man's version of a macro (see below). Another way would be to
-use the Vim Commentary plugin (see below), with the command ~gc~.
+NOTE: To comment out lines, use block-wise selection with ~ctrl-v~, then press
+~I~, and type the character comment (~//~ for example), and hit escape. It can
+also be used as a poor man's version of a macro (see below). Another way would
+be to use the Vim Commentary plugin (see below), with the command ~gc~.
 ** Command Mode (from Normal Mode)
-**** Beginner
+*** Beginner
+All of the below can be simplified to just ~:w~ and ~:q~, since Vim will warn
+you if you try to quit with unsaved changes.
+
 - ~:w~: (Write) Write the file
 - ~:q~: (Quit) Quit Vim, without having modified the file
 - ~:q!~: (Quit!) Quit Vim, throwing away modifications
 - ~:wq~: (Write-Quit) Write the file, then quit Vim
 - ~:x~: (Exit) Shorthand for ~:wq~
-**** Intermediate
+*** Intermediate
 - ~:! date~: (~!~ is similar to ~|~) Run bash command ~date~ and show the result without adding to file
+- ~:r! date~: (Read) Run bash command ~date~ and read in the result into the file
 - ~:s/foo/bar/g~: (Substitute) Substitute 'foo' with 'bar', globally (ie. each occurrence)
-- ~:r! date~: Run bash command ~date~ and read in the result into the file
 ** Command Mode (from Visual Mode)
 Visually select text then enter Command Mode using ~:~. NOTE: you will see
-~:'<,'>~ instead. This just tells Vim to run the command over the whole
-selection.[fn:7]
-**** Intermediate
-- ~:'<,'>! wc -l~: Run bash command ~wc -l~ on visually selected text
+~:'<,'>~[fn:7] instead. This just tells Vim to run the command over the whole
+selection.
+*** Intermediate
+- ~:'<,'>! wc -l~: Run bash command ~wc -l~ on visually selected text, replacing with the result
 * Composability and repeatability
+This section should introduce you to even more advanced concepts.
 ** Text Objects
 NOTE: All text objects can be used with delete, yank, copy, etc. "In" deletes
 the text inside, while "All" deletes quotes, braces, and a single space (so the
 spaces around it end up balanced).
-**** Beginner
+*** Beginner
 - ~iw~: (In Word)
 - ~aw~: (All Word)
 - ~is~: (In Sentence)
@@ -301,21 +303,21 @@ spaces around it end up balanced).
 - ~it~: (In Tag) Used in HTML
 - ~at~: (All Tag) Used in HTML
 ** Dot (~.~) command
-**** Beginner
+*** Beginner
 The dot command repeats the last complete command that you ran. For example if
 you changed a word to "Hi" using ~ciwHi~ and then escape, you can change another
 word to "Hi" using dot.
 
-This is one way of renaming variables.[fn:10] First search for a variable using ~/~,
-then using ~ciw~ change the variable to something else. Finally, repeat this
-change all throughout the document using ~n~ to go to the next instance, and ~.~
-to apply the change.
+Expanding on the above, one way[fn:10] to quickly rename variables would be to
+first search for a variable using ~/~, then using ~ciw~ change the variable to
+something else. Finally, repeat this change all throughout the document using
+~n~ to go to the next instance, and ~.~ to apply the change.
 ** Number Prefixes
-**** Intermediate
+*** Intermediate
 Most commands can be prefixed, meaning you can run commands like ~d5w~ which
 will delete the next 5 words.
 ** Macros
-**** Intermediate
+*** Intermediate
 Macros can be used for creating groups of repeatable commands. In other words,
 start macro, run general commands (ie. ~w~ rather than ~llllllll~), stop macro,
 run the macro previously defined on all of the remaining text. The steps are:
@@ -326,33 +328,120 @@ run the macro previously defined on all of the remaining text. The steps are:
 
 Fun fact: you can also define recursive macros, (works in NeoVim).[fn:16] This
 allows you to create a single macro that runs forever (of course, Vim will stop
-the macro at the end of the document, for example). An example of this is the 
-following key sequences: ~qaV~j@a~.
-* Registers
-**** Intermediate
-The most important part about registers is that the ~"+~ prefix
-is used to store the global clipboard, which can be accessed by any
-program.[fn:17] Frankly, I don't use any register other than the global one.
+the macro at the end of the document, for example). An example of this is the
+following key sequences: ~qaV~j@aq~, which switches the case of every character
+until the end of the document.
+** Registers
+*** Intermediate
+The most important part about registers is that the ~"+~[fn:17] prefix is used to store
+the global clipboard, which can be accessed by any program. Frankly, I
+don't use any register other than the global one.
 
-Other actions, such as yanks and deletions can be prefixed with a
-register, for later retrieval.
+Other actions, such as yanks and deletions can be prefixed with a register, for
+later retrieval.
 
-A useful combination is using registers for editing a macro you wrote.
-To continue from the macros section, you can write an incorrect macro, paste it
-into the file, modify it, copy it back to the register, and then run that
-macro.
+A useful combination is using registers for editing a macro you wrote. To
+continue from the macros section, you can write an incorrect macro, paste it
+into the file, modify it, copy it back to the register, and then run that macro.
+This seems quite difficult, but there can be really long macros that you would
+rather go through the above to change a character, than to remake the macro
+from the beginning.
 * Extending Vim for yourself
-To change the default behaviour of Vim, you can modify a configuration file
-called ~.vimrc~ (in GNU/Linux) or ~_vimrc~ (in Windows, I think).
+** Configuration File
+To change the default behaviour of Vim, and to keep it even after quitting, you
+must modify a configuration (also known as a dot file[fn:21]) file for Vim. For
+GNU/Linux and NeoVim users this file is ~~/.config/nvim/init.vim~, for Vim users
+the file is ~~/.vimrc~. If you use Windows, the file will be ~_vimrc~[fn:20] (in
+the home directory in Windows).
 
-This will allow you to use plugins, change colorshemes, map keys to commands,
-etc.
+For example, typing ~:colorscheme elflord~[fn:22] from Normal Mode, will change
+the colorscheme to elflord for the current Vim session. Once you close Vim this
+setting will be gone. To save this setting, save a line in the configuration
+file as:
+
+#+BEGIN_SRC vim
+" Set colorscheme to elflord
+colorscheme elflord
+#+END_SRC
+
+Notice the lack of a colon at the beginning of the line. The ~"~ indicates a
+line comment.
+
+Here are some other settings you may wish to add to your Vim configuration
+file.[fn:23] In general, you should always copy the comments along with the
+actual code. (NOTE: always understand what every command does before adding it
+to your configuration file.)
+
+The below file is available as ~configuration.vim~ at
+[[https://github.com/Hassan-Shabbir/vim-introduction][Hassan-Shabbir/vim-introduction]].
+
+#+BEGIN_SRC vimrc
+" Enable filetype plugins, such as syntax highlighting for files.
+filetype plugin indent on
+
+" Actually enable syntax highlighting.
+syntax enable 
+
+" Set autoread to true. When a file is changed from the outside,
+" the file will be reloaded.
+set autoread
+
+" With a map leader it's possible to do extra key combinations 
+" like '<leader>w' saves the current file. Mapleader is usually 
+" the backslash key ('\'), however, below we set it to the 
+" ',' key, since it is easier to reach.
+let mapleader = ","
+
+" This is how you would define "the leader key (see above), 
+" followed by the 'w' key will write the file".
+nmap <leader>w :w!<cr>
+
+" Set a space of 3 lines between the cursor and the top/bottom
+" of the window, making it easier to get the context of the code.
+set so=3
+
+" Turn on a completion menu on the bottom. Used when you try to 
+" tab-complete something in command mode.
+set wildmenu
+set wildmode=list:longest,full
+
+" Configure backspace so it acts as it should act. Namely, 
+" allow backspace to delete new lines, delete past the start 
+" of insert mode, and delete autoindent.
+set backspace=eol,start,indent
+
+" Ignore case when searching, so '/hi' will match 'hi' in the
+" text, along with 'Hi'.
+set ignorecase
+
+" If a case is used however, search match using case. So 
+" '/Hi' will only match 'Hi', and not 'hi', (since we 
+" explicitly told the case).
+set smartcase
+
+" Highlight search results.
+set hlsearch
+
+" Make search act like search in modern browsers.
+set incsearch 
+
+" Don't redraw while executing macros (for performance).
+set lazyredraw 
+
+" Return to last edit position when opening files
+" NOTE: Put this all on one line
+au BufReadPost * 
+    if line("'\"") > 1 
+        && line("'\"") <= line("$") | 
+        exe "normal! g'\"" | 
+    endif
+#+END_SRC
 ** Plugins
 These are a few plugins that I would consider quite useful.
 
 - [[https://github.com/junegunn/vim-plug][Vim Plug]]: Vim plugin manager
 To be able to use the below plugins you need to install a plugin manager, this
-is the one I personally use.
+is the one I personally use, (no real reason).
 
 - [[https://github.com/tpope/vim-sensible][Vim Sensible]]: set default settings for Vim
 This is useful for starting off in Vim. (Not needed for NeoVim.)
@@ -371,7 +460,7 @@ More plugins for Vim can be found on [[https://vimawesome.com]].
 - [[https://github.com/altercation/solarized][Solarized]]
 
 *** Vim in other places
-- Bash/Zsh: Both Bash and Zsh have Vim modes that can be enabled
+- Bash/Zsh: Both Bash and Zsh have Vim modes that can be enabled in their respective dot-files
 - [[https://github.com/ardagnir/athame][Athame]]: Full Vim in the terminal, ie. when writing bash commands
 - [[https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb][Vimium]]: Vim in Chrome
 
@@ -383,6 +472,21 @@ be able to use vim, and look up whatever you need on the internet. To become
 proficient with Vim, you should use it repeatedly, until the Beginner commands
 come to you without much thought.
 * Footnotes
+
+[fn:23] This is mostly taken from [[https://github.com/amix/vimrc][Amix's Vimrc.]]
+
+[fn:22] To find a colorscheme you like from the preinstalled colorschemes, go to [[https://stackoverflow.com/questions/7331940/how-to-get-the-list-of-all-installed-color-schemes-in-vim][List
+installed colorschemes]].
+
+[fn:21] Because the file starts with a ~.~, I know, so original.
+
+[fn:20] [[https://superuser.com/questions/86246/where-should-the-vimrc-file-be-located-on-windows-7][Locate Home in Windows]]
+
+[fn:19] When you see characters, one after another, the keys should also be pressed
+one after another.
+
+[fn:18] This is where the command mode in VI comes from, see below. Also see
+[[https://sanctum.geek.nz/arabesque/actually-using-ed/][Actually Using Ed]] for some extreme masochism.
 
 [fn:17] The ~"~ is used to retrieve registers, with ~+~ referring to the name
 of the register to be accessed.
@@ -419,8 +523,8 @@ and substituting in a file. The regex ~^hi~ says match the line starting with
 ends with nothing in between).
 
 [fn:8] This is usually not encouraged, expecially at the beginning, since
-having plugins hinder your ability to understand Vim, and are nice to have
-and not necessarily mandatory for the functioning of Vim.
+having plugins hinder your ability to understand Vim, and are nice to have and
+not necessarily mandatory for the functioning of Vim.
 
 [fn:7] So the command will run in the range ~x,y~, and 
 a ~'a~ refers to the mark a, with the ~<~ referring to the first and ~>~
@@ -438,7 +542,6 @@ the beginning of the selection, to the end of the selection."
 [fn:2] For more on how vim works see this awesome answer on Stackoverflow
 [[https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim][Your problem with Vim is that you don't grok vi.]]
 
-[fn:1] Technically, the "ed" and "ex" editors are even older, but they literally
-show you nothing (you have to manually print lines), so it is like editing text
-in the dark. This is where the command mode in VI comes from, see below. Also see
-[[https://sanctum.geek.nz/arabesque/actually-using-ed/][Actually Using Ed]] for some extreme masochism.
+[fn:1] Technically, the "ed" and "ex" editors are even older, but are quite
+cumbersome to use. For example, they require you to print a range of lines to be
+able to see them.
