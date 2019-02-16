@@ -348,7 +348,7 @@ into the file, modify it, copy it back to the register, and then run that macro.
 This seems quite difficult, but there can be really long macros that you would
 rather go through the above to change a character than to remake the macro from
 the beginning.
-* TODO Extending Vim for yourself
+* Extending Vim for yourself
 ** Configuration File
 To change the default behaviour of Vim, and to keep it even after quitting, you
 must modify a configuration (also known as a dot file[fn:21]) file for Vim. For
