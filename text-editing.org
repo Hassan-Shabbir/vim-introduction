@@ -101,8 +101,8 @@ NeoVim.
 ** Command Mode (System Commands; Ed commands)
 For now, the most important command mode you need to know will be the commands
 to exit Vim (which is accessible from Command Mode). This is such a problem for
-Vim beginners that [[https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor][this StackOverflow answer]] has 4,000 upvotes, and over 1
-Million views. First enter Normal mode by pressing the escape key, then press
+Vim beginners that [[https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor][this StackOverflow answer]] has 4,000 upvotes, and around 1.8
+million views. first enter normal mode by pressing the escape key, then press
 ~:~. You will now see a colon on the last line of the terminal. If you wish to
 save your changes type ~wq~, and then press enter. This command stands for write
 (save) the file then quit Vim. If you wish to throw away your changes type ~q!~
@@ -201,8 +201,8 @@ These commands will change you automatically from Normal Mode to Insert Mode.
 - ~a~: (Append) Enter Insert Mode after current character
 - ~A~: (Append) Enter Insert Mode at the end of the line
 *** Intermediate
-- ~o~: (Open) Enter Insert Mode at the end of the line
-- ~O~: (Open) Enter Insert Mode at the end of the line
+- ~o~: (Open) Add new line below and go into insert mode
+- ~O~: (Open) Add new line above and go into insert mode
 ** Deletion Commands (from Normal Mode)
 NOTE: The composable nature of Vim should be apparent in this section.
 *** Beginner
