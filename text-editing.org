@@ -202,7 +202,7 @@ These commands will change you automatically from Normal Mode to Insert Mode.
 - ~A~: (Append) Enter Insert Mode at the end of the line
 *** Intermediate
 - ~o~: (Open) Enter Insert Mode at the end of the line
-- ~O~: (Open) Enter Insert Mode at the end of the line
+- ~O~: (Open) Enter Insert Mode at the beginning of the line
 ** Deletion Commands (from Normal Mode)
 NOTE: The composable nature of Vim should be apparent in this section.
 *** Beginner
