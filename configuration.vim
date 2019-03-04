@@ -29,7 +29,8 @@ set so=3
 
 " Turn on a completion menu on the bottom. Used when you try to 
 " tab-complete something in command mode. 
-set wildmenu set wildmode=list:longest,full
+set wildmenu
+set wildmode=list:longest,full
 
 " Configure backspace so it acts as it should act. Namely, 
 " allow backspace to delete new lines, delete past the start 
@@ -59,22 +60,3 @@ set lazyredraw
 au BufReadPost * 
   if line("'\"") > 1 && line("'\"") <= line("$") 
   | exe "normal! g'\"" | endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

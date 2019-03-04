@@ -5,23 +5,6 @@
 
 \newpage
 
-# DONE: Add vim videos, vim-casts
-# DONE: IDE is the operating system in vim
-# DONE: Add graphical Vim cheatsheet by viemu
-# DONE: Add "Why, oh WHY, do those #?@! nutheads use vi?"
-# DONE: Add "+p to commands, etc.
-# DONE: Add indent/outdent commands (doesn't fit in nicely, still added anyways)
-# DONE: Add backwards search
-# DONE: Change NOTEs
-# DONE: Talk more about vim as a language, <count> <operator> <motion>
-# DONE: Add comment about vim help command
-# DONE: Add ctrl-c as another way of going into normal mode
-# DONE: Remap caps lock to escape using the OS
-# DONE: Make English better in "More Resources" section
-# DONE: Verify the correct ordering of the vim file below
-# DONE: Add reference to vimtutor
-# DONE: Add `set number relativenumber` command to the vim file below
-
 * The main text editors
 There are two main (extensible) text editors for Unix and GNU/Linux[fn:11]
 operating systems. These are the VI and Emacs lines of text editors.
@@ -479,7 +462,8 @@ set so=3
 
 " Turn on a completion menu on the bottom. Used when you try to 
 " tab-complete something in command mode. 
-set wildmenu set wildmode=list:longest,full
+set wildmenu
+set wildmode=list:longest,full
 
 " Configure backspace so it acts as it should act. Namely, 
 " allow backspace to delete new lines, delete past the start 
